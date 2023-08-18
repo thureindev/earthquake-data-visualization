@@ -73,7 +73,7 @@ function App() {
                             >
                                 {`Total (${
                                     // count for earthquake data that are greater than 4.5 magnitude
-                                    featureData.filter((feature) => feature.properties.mag > POWERFUL_MAG).length
+                                    featureData.filter((feature) => feature.properties.mag >= POWERFUL_MAG).length
                                     }) earthquakes that are greater than 6 magnitude`
                                 }
                             </p>
