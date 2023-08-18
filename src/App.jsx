@@ -16,16 +16,19 @@ function App() {
     //  //  coordinates: features[index].geometry.coordinates
     //  //  location: features[index].properties.place
     //  //  time: features[index].properties.time
-    const [featureData, setFeatureData] = useState([]);   
+    const [featureData, setFeatureData] = useState([]);
     //  //  bboxData = [minLng, minLat, minDepth, maxLng, maxLat, maxDepth]
     const [bboxData, setBboxData] = useState([]);
-    
+
     // calculating mapCenterPoint for Google Map
     const mapCenterPoint = useMemo(() => {
-        const centerLng = bboxData[0] + (bboxData[3] = bboxData[0]) / 2;
-        const centerLat = bboxData[1] + (bboxData[4] - bboxData[1]) / 2;
-        console.log(centerLng, centerLat);
-        return { lng: centerLng, lat: centerLat };
+        if (bboxData.length > 0) {
+            const centerLng = bboxData[0] + (bboxData[3] = bboxData[0]) / 2;
+            const centerLat = bboxData[1] + (bboxData[4] - bboxData[1]) / 2;
+            console.log(centerLng, centerLat);
+            return { lng: centerLng, lat: centerLat };
+        }
+        return { lng: 1, lat: 1 }
     }, [bboxData]);
 
     // Make a request for a user with a given ID

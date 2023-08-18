@@ -8,28 +8,29 @@ export default function MapContainer({ featureData, mapCenterPoint }) {
     const [selectedMarker, setSelectedMarker] = useState(null);
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_MAPBOX_TOKEN,
+        googleMapsApiKey: import.meta.env.VITE_REACT_APP_MAPBOX_TOKEN,
     });
 
     if (!isLoaded) return <div>Loading...</div>;
     return (
         <GoogleMap
             zoom={5}
-            center={mapCenterPoint ? mapCenterPoint : { lng: 1, lat: 1 }}
+            center={mapCenterPoint}
             mapContainerClassName="map-container"
         >
-            {featureData.map((feature, index) => (
-                <MarkerF
-                    key={index}
-                    position={{
-                        lng: feature.geometry.coordinates[0],
-                        lat: feature.geometry.coordinates[1]
-                    }}
-                    onClick={() => {
-                        setSelectedMarker(featureData[index])
-                    }}
-                />
-            ))}
+            {featureData &&
+                featureData.map((feature, index) => (
+                    <MarkerF
+                        key={index}
+                        position={{
+                            lng: feature.geometry.coordinates[0],
+                            lat: feature.geometry.coordinates[1]
+                        }}
+                        onClick={() => {
+                            setSelectedMarker(featureData[index])
+                        }}
+                    />
+                ))}
 
             {selectedMarker &&
                 <InfoWindow
