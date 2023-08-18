@@ -30,7 +30,7 @@ function App() {
             // calculating center longitude and latitude
             const centerLng = bboxData[0] + (bboxData[3] = bboxData[0]) / 2;
             const centerLat = bboxData[1] + (bboxData[4] - bboxData[1]) / 2;
-            
+
             return { lng: centerLng, lat: centerLat };
         }
         return { lng: 1, lat: 1 }
@@ -60,17 +60,18 @@ function App() {
                 <h1>{title}</h1>
 
                 <section>
-                    <h2 className='summary'>Summary</h2>
-                    
+
                     {count > 0
                         ?
                         <>
+                            <h2 className='summary'>Summary</h2>
+                            
                             <p className='recorded-count'>{"Total (" + count + ") earthquakes recorded"}</p>
 
                             {/* This info p tag is used as toggle button to hide and show details of powerful magnitude features*/}
                             <p
                                 className={`recorded-count-powerful-mag ${showPowerfulMagFeatures ? "active" : ""}`}
-                                onClick={() => count > 0 ? setShowPowerfulMagFeatures(!showPowerfulMagFeatures): setShowPowerfulMagFeatures(false)}
+                                onClick={() => count > 0 ? setShowPowerfulMagFeatures(!showPowerfulMagFeatures) : setShowPowerfulMagFeatures(false)}
                             >
                                 {`Total (${
                                     // count for earthquake data that are greater than 4.5 magnitude

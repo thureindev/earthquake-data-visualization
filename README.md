@@ -22,14 +22,15 @@ This app was developed as a part of the interview test development for Primal.co
    
 ```bash
     cd earthquake-data-visualization
-    Install the required dependencies:
 ```
 
+3. Install the required dependencies:
+   
 ```bash
     npm install
 ```
 
-3. Start the development server:
+4. Start the development server:
 
 ```bash
     npm run dev
