@@ -27,9 +27,10 @@ function App() {
     // calculating mapCenterPoint for Google Map View
     const mapCenterPoint = useMemo(() => {
         if (bboxData.length > 0) {
+            // calculating center longitude and latitude
             const centerLng = bboxData[0] + (bboxData[3] = bboxData[0]) / 2;
             const centerLat = bboxData[1] + (bboxData[4] - bboxData[1]) / 2;
-            console.log(centerLng, centerLat);
+            
             return { lng: centerLng, lat: centerLat };
         }
         return { lng: 1, lat: 1 }

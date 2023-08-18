@@ -42,6 +42,7 @@ export default function MapContainer({ featureData, mapCenterPoint }) {
                 >
                     <div>
                         <h4>{selectedMarker.properties.place}</h4>
+                        <p>{ selectedMarker.properties.mag }</p>
                         <p>{new Date(selectedMarker.properties.time).toLocaleString()}</p>
                     </div>
                 </InfoWindow>
