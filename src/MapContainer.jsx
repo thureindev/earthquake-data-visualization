@@ -11,7 +11,7 @@ export default function MapContainer({ featureData, mapCenterPoint }) {
         googleMapsApiKey: import.meta.env.VITE_REACT_APP_MAPBOX_TOKEN,
     });
 
-    if (!isLoaded) return <div>Loading...</div>;
+    if (!isLoaded) return <div>Loading Google Map... Please wait</div>;
     return (
         <GoogleMap
             zoom={5}

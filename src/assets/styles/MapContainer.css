@@ -8,3 +8,23 @@
         height: 60vh;
     }
 }
+
+.recorded-count-powerful-mag {
+    cursor: pointer;
+    padding: 1.5rem;
+    border: 1px solid #FDCC27;
+    border-radius: 6px;
+}
+.recorded-count-powerful-mag:hover {
+    background-color: #FDCC27;
+}
+.recorded-count-powerful-mag.active {
+    background-color: #FDCC27;
+}
+.list-powerful-mag {
+    max-width: 800px;
+    text-align: left;
+}
+.powerful-mag-data {
+    color: #4e4e4e;
+}
