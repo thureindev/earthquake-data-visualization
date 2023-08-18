@@ -8,7 +8,7 @@ export default function MapContainer({ featureData, mapCenterPoint }) {
     const [selectedMarker, setSelectedMarker] = useState(null);
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.MAPBOX_TOKEN,
+        googleMapsApiKey: process.env.REACT_APP_MAPBOX_TOKEN,
     });
 
     if (!isLoaded) return <div>Loading...</div>;
