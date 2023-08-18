@@ -16,9 +16,10 @@ This app was developed as a part of the interview test development for Primal.co
 
 ```bash
     git clone https://github.com/thureindev/earthquake-data-visualization.git
-    Navigate into the project directory:
 ```
 
+2. Navigate into the project directory:
+   
 ```bash
     cd earthquake-data-visualization
     Install the required dependencies:
@@ -26,8 +27,9 @@ This app was developed as a part of the interview test development for Primal.co
 
 ```bash
     npm install
-    Start the development server:
 ```
+
+3. Start the development server:
 
 ```bash
     npm run dev
