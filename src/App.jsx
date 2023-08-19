@@ -28,7 +28,7 @@ function App() {
     const mapCenterPoint = useMemo(() => {
         if (bboxData.length > 0) {
             // calculating center longitude and latitude
-            const centerLng = bboxData[0] + (bboxData[3] = bboxData[0]) / 2;
+            const centerLng = bboxData[0] + (bboxData[3] - bboxData[0]) / 2;
             const centerLat = bboxData[1] + (bboxData[4] - bboxData[1]) / 2;
 
             return { lng: centerLng, lat: centerLat };
